@@ -1,59 +1,27 @@
-# http-proxy-to-socks
+# http2socks in Node.js
 
-[![build](https://api.travis-ci.org/oyyd/http-proxy-to-socks.svg?branch=master)](https://travis-ci.org/oyyd/http-proxy-to-socks)
+Forked from [oyyd/http-proxy-to-socks](https://github.com/oyyd/http-proxy-to-socks).
 
-[简介](https://github.com/oyyd/http-proxy-to-socks/blob/master/READMECN.md)
+分叉自 [oyyd/http-proxy-to-socks](https://github.com/oyyd/http-proxy-to-socks).
 
-hpts(http-proxy-to-socks) is a nodejs tool to convert SOCKS proxy into http proxy.
+## Diff 差异
 
-Many clients support setting up http proxy to speed up network requests and for sometimes only SOCKS proxy is available to you. SOCKS proxy supports TCP so that it's possible to convert those requests from http proxy into SOCKS protocol. In this way, you can still keep the goodness provided by your SOCKS proxy(e.g. encryption).
+In English:
 
-## Setup
+- Use modern JS - ECMAScript Module, async/await.
+- Chopped and modified
 
-```
-npm install -g http-proxy-to-socks
-```
+In Chinese:
 
-Make sure your nodejs version is greater than `4`.
+- 采用现代 JS 写法 - ECMAScript Module 和 async/await
+- 裁剪与修改
 
-## Usage
+## Usage 使用
 
-```
-hpts -s 127.0.0.1:1080 -p 8080
-```
+See `run.ps1`
 
-This will start a process listening on `8080` as a http proxy. It will convert http requests into socks requests and send them to port `1080`. Please make sure your socks service is available at the corresponding port.
+参见 `run.ps1`
 
-Other options:
-
-```
-Options:
-
-  -h, --help             output usage information
-  -V, --version          output the version number
-  -s, --socks [socks]    specify your socks proxy host, default: 127.0.0.1:1080
-  -p, --port [port]      specify the listening port of http proxy server, default: 8080
-  -c, --config [config]  read configs from file in json format
-  --level [level]        log level, vals: info, error
-```
-
-You can specify a `json` config file with `-c`:
-
-```json
-{
-  "socks": "127.0.0.1:1080",
-  "port": 8080
-}
-```
-
-## CONTRIBUTE
-
-Please add more tests for corresponding features when you send a PR:
-
-```
-npm run test
-```
-
-## License
+## License 许可证
 
 MIT
